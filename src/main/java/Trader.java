@@ -69,6 +69,17 @@ public class Trader<T> {
      *       We will call this in exchangeMoney().
      */
     public int getSellingPrice(T object){
+
+        // how do i check if an object is tradeable?
+
+        if (object instanceof Tradable){
+            Tradable temp = (Tradable) object;
+            return temp.getPrice();
+        }
+        else{
+            return Tradable.MISSING_PRICE;
+        }
+
     }
 
 
